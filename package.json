@@ -2,9 +2,10 @@
   "name": "projecttep",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "start": "node index"
+    "serve": "./node_modules/.bin/firebase emulators:start --only hosting",
+    "deploy": "./node_modules/.bin/firebase deploy --only hosting"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/XiiK/ProjectTEP/issues"
   },
-  "homepage": "https://github.com/XiiK/ProjectTEP#readme"
+  "homepage": "https://github.com/XiiK/ProjectTEP#readme",
+  "devDependencies": {
+    "firebase-tools": "^10.2.1",
+    "standard": "^16.0.4"
+  }
 }
