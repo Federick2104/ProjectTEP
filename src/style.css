@@ -5,7 +5,9 @@
 .modello{
     display: absolute;
 }
-
+html{
+    background-color: black;
+}
 
 .earth-scene {
     display: none;
@@ -110,7 +112,7 @@
 
 /* Info-box di associazioni per l'ambiente e rispetto natura */
 #aiutaci {
-    font-size: 30px;
+    font-size: 40px;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     text-align: center;
