@@ -1,14 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThreeJS Starter</title>
+    <title>Terra e Ambiente</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- Scrolling animation package with AOS by michalsnik at michalsnik.github.io -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
 </head>
 
 <body>
-    <canvas class="webgl"></canvas>
+    <div class="container">
+        <nav class="navigation">
+            <ul class="nav-menu">
+                <!-- <li class="nav-items"><a href="#">Intro</a></li>
+                <li class="nav-items"><a href="#">Card1</a></li>
+                <li class="nav-items"><a href="#">Card2</a></li>
+                <li class="nav-items"><a href="#">Card3</a></li> -->
+            </ul>
+        </nav>
+
+        <div class="title-container">
+            <div class="title">
+                <h1>Abbi cura della tua casa</h1>
+                <p>Se non riesci a mantenere pulita la tua vecchia camera da letto, distruggerai anche quella nuova.<br>Non cercare un
+                    alternativa di terra.<br> Piuttosto mantienila pulita e abitabile. L'inquinamento ambientale è aumentato
+                    in modo significativo.<br> Inquinando l'ambiente non stiamo solo distruggendo la terra, stiamo distruggendo
+                    anche l'umanità.</p>
+                <button class="btn">Puliamo Insieme</button>
+            </div>
+        </div>
+    </div>
+    <div class="earth-scene">
+        <canvas class="webgl"></canvas>
+    </div>
+    <!-- Info box con associzioni ambientali -->
+    <p id="aiutaci" data-aos="fade-right">Aiutaci tramite piccole donazioni</p>
+    <div class="associazioni">
+        <div class="info-box">
+            <div class="box" data-aos="zoom-in">
+                <div class="content">
+                    <img src="./img/muskimg.png">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, maiores.</p>
+                </div>
+            </div>
+            <div class="box" data-aos="zoom-in">
+                <div class="content">
+                    <img src="./img/pazzoimg.jpeg">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero pariatur ad, tempore iste quis eveniet.</p>
+                </div>
+            </div>
+            <div class="box" data-aos="zoom-in">
+                <div class="content">
+                    <img src="./img/snmimg.jpeg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, maxime.</p>
+                </div>
+            </div>
+            <div class="box" data-aos="zoom-in">
+                <div class="content">
+                    <img src="./img/whoimg.jpeg">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, eum?</p>
+                </div>
+            </div>
+            <div class="box" data-aos="zoom-in">
+                <div class="content">
+                    <img src="./img/wwfimg.jpeg">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, placeat.</p>
+                </div>
+            </div>
+            <div class="box" data-aos="zoom-in">
+                <div class="content">
+                    <img src="./img/yesimg.jpeg">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo soluta nisi ea assumenda blanditiis itaque.</p>
+                </div>
+            </div>
+            <div class="box" data-aos="zoom-in">
+                <div class="content">
+                    <img src="./img/zebimg.jpeg">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, dolores?</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

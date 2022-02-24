@@ -1,102 +1,144 @@
 import './style.css'
 import * as THREE from 'three'
-// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-// import * as dat from 'dat.gui'
+import { OrbitControls } from '../node_modules/three/examples/jsm/controls/OrbitControls'
+import Stats from '../node_modules/three/examples/jsm/libs/stats.module.js'
 
-// Debug
-// const gui = new dat.GUI()
+import AOS from 'aos'
 
-// Canvas
-const canvas = document.querySelector('canvas.webgl')
+// Variabili globali
 
-// Scene
+const canvas = document.querySelector('.webgl')
+
+// Setup della scena
 const scene = new THREE.Scene()
 
-// Objects
-const geometry = new THREE.TorusGeometry(0.7, 0.2, 16, 100)
+// Setup della camera(punto di vista dell'utente)
+const fov = 70
+const aspect = window.innerWidth / window.innerHeight
+const near = 0.1
+const far = 1000
 
-// Materials
-
-const material = new THREE.MeshBasicMaterial()
-material.color = new THREE.Color(0xff0000)
-
-// Mesh
-const sphere = new THREE.Mesh(geometry, material)
-scene.add(sphere)
-
-// Lights
-
-const pointLight = new THREE.PointLight(0xffffff, 0.1)
-pointLight.position.x = 2
-pointLight.position.y = 3
-pointLight.position.z = 4
-scene.add(pointLight)
-
-/**
- * Sizes
- */
-const sizes = {
-  width: window.innerWidth,
-  height: window.innerHeight
-}
-
-window.addEventListener('resize', () => {
-  // Update sizes
-  sizes.width = window.innerWidth
-  sizes.height = window.innerHeight
-
-  // Update camera
-  camera.aspect = sizes.width / sizes.height
-  camera.updateProjectionMatrix()
-
-  // Update renderer
-  renderer.setSize(sizes.width, sizes.height)
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-})
-
-/**
- * Camera
- */
-// Base camera
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.x = 0
-camera.position.y = 0
+const camera = new THREE.PerspectiveCamera(fov, aspect, near, far)
 camera.position.z = 2
 scene.add(camera)
 
-// Controls
-// const controls = new OrbitControls(camera, canvas)
-// controls.enableDamping = true
-
-/**
- * Renderer
- */
+// Render
 const renderer = new THREE.WebGLRenderer({
-  canvas: canvas
+  canvas: canvas,
+  antialias: true
 })
-renderer.setSize(sizes.width, sizes.height)
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-/**
- * Animate
- */
+renderer.setSize(window.innerWidth, window.innerHeight)
+renderer.setPixelRatio((window.devicePixelRatio) ? window.devicePixelRatio : 1)
+renderer.autoClear = false
+renderer.setClearColor(0x000000, 0.0)
 
-const clock = new THREE.Clock()
+// Setup dei controlli dell'orbita
+const controls = new OrbitControls(camera, renderer.domElement)
 
-const tick = () => {
-  const elapsedTime = clock.getElapsedTime()
+// Geometria della terra default(0.6, 32, 32)
+const earthGeometry = new THREE.SphereGeometry(0.6, 50, 50)
+// Raggio, Width Segments(low = poligon) e Height Segments(low = poligon)
 
-  // Update objects
-  sphere.rotation.y = 0.5 * elapsedTime
+// Geomteria del secondo pianeta distrutto
+const corruptedEarthGeometry = new THREE.SphereGeometry(0.3, 50, 50)
 
-  // Update Orbital Controls
-  // controls.update()
+// Materiale della terra o in un'altro caso di un'altro modello 3D
+const earthMaterial = new THREE.MeshPhongMaterial({
+  // roughness: 1,
+  // metalness: 0,
+  map: THREE.ImageUtils.loadTexture('texture/earthmap1k.jpg'),
+  bumpMap: THREE.ImageUtils.loadTexture('texture/earthbump.jpg'),
+  bumpScale: 0.3
+})
+// Materiale del secondo pianeta
+const corruptedEarthMaterial = new THREE.MeshPhongMaterial({
+  // roughness: 1,
+  // metalness: 0,
+  map: THREE.ImageUtils.loadTexture('texture/earthmap1k.jpg'),
+  bumpMap: THREE.ImageUtils.loadTexture('texture/earthbump.jpg'),
+  bumpScale: 0.3
+})
+// Griglia della terra
+const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial)
+earthMesh.position.set(0, 0, 0)
+console.log('Coordinate Obj1: ', earthMesh.position.x + ',' + earthMesh.position.y + ',' + earthMesh.position.z)
+scene.add(earthMesh)
 
-  // Render
-  renderer.render(scene, camera)
+// girglia del secondo pianeta
+const corruptedEarthMesh = new THREE.Mesh(corruptedEarthGeometry, corruptedEarthMaterial)
+corruptedEarthMesh.position.set(0, 10, 0)
+console.log('Coordinate Obj2: ', corruptedEarthMesh.position.x + ',' + corruptedEarthMesh.position.y + ',' + corruptedEarthMesh.position.z)
+scene.add(corruptedEarthMesh)
 
-  // Call tick again on the next frame
-  window.requestAnimationFrame(tick)
+// Geometria delle Nuvole
+const cloudGeometry = new THREE.SphereGeometry(0.65, 32, 32)
+
+// Materiale delle nuvole ('texture/earthCloud.png')
+
+const cloudMetarial = new THREE.MeshPhongMaterial({
+  map: THREE.ImageUtils.loadTexture('texture/earthCloud.png'),
+  transparent: true
+})
+
+// Griglia nuvole
+const cloudMesh = new THREE.Mesh(cloudGeometry, cloudMetarial)
+scene.add(cloudMesh)
+
+// Geometria della Galassia(sfondo)
+const starGeometry = new THREE.SphereGeometry(80, 64, 64)
+
+// Materiale della galassia
+const starMaterial = new THREE.MeshBasicMaterial({
+  map: THREE.ImageUtils.loadTexture('texture/galaxy.png'),
+  side: THREE.BackSide
+})
+
+// Griglia galassia
+const starMesh = new THREE.Mesh(starGeometry, starMaterial)
+scene.add(starMesh)
+
+// Luce dell'ambiente
+const ambientlight = new THREE.AmbientLight(0xffffff, 0.2)
+scene.add(ambientlight)
+
+// Direzione della luce
+const pointLight = new THREE.PointLight(0xffffff, 1)
+pointLight.position.set(5, 3, 5)
+scene.add(pointLight)
+
+// This displays a helper object consisting of a spherical Mesh for visualizing
+// a PointLight.
+const Helper = new THREE.PointLightHelper(pointLight)
+scene.add(Helper)
+
+// Gestione del ridimensionamento
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight
+  camera.updateProjectionMatrix()
+  renderer.setSize(window.innerWidth, window.innerHeight)
+  render()
+}, false)
+
+// Mostra le specifiche tecniche(Fps,ms ecc.)
+const stats = Stats()
+document.body.appendChild(stats.dom)
+
+// Animazione della terra che gira
+const animate = () => {
+  window.requestAnimationFrame(animate)
+  starMesh.rotation.y -= 0.002
+  earthMesh.rotation.y -= 0.0035
+  cloudMesh.rotation.y -= 0.0115
+  controls.update()
+  render()
+  stats.update()
 }
 
-tick()
+// Renderinig della scena e camera
+const render = () => {
+  renderer.render(scene, camera)
+}
+
+animate()
+AOS.init() // Animzioni on scroll realizzate da michalsnik at michalsnik.github.io
