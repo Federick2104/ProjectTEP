@@ -47,8 +47,8 @@ const corruptedEarthGeometry = new THREE.SphereGeometry(0.3, 50, 50)
 const earthMaterial = new THREE.MeshPhongMaterial({
   // roughness: 1,
   // metalness: 0,
-  map: THREE.ImageUtils.loadTexture('texture/earthmap1k.jpg'),
-  bumpMap: THREE.ImageUtils.loadTexture('texture/earthbump.jpg'),
+  map: THREE.ImageUtils.TextureLoader('texture/earthmap1k.jpg'),
+  bumpMap: THREE.ImageUtils.TextureLoader('texture/earthbump.jpg'),
   bumpScale: 0.3
 })
 // Materiale del secondo pianeta
