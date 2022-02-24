@@ -47,16 +47,16 @@ const corruptedEarthGeometry = new THREE.SphereGeometry(0.3, 50, 50)
 const earthMaterial = new THREE.MeshPhongMaterial({
   // roughness: 1,
   // metalness: 0,
-  map: THREE.ImageUtils.TextureLoader('./texture/earthmap1k.jpg'),
-  bumpMap: THREE.ImageUtils.TextureLoader('./texture/earthbump.jpg'),
+  map: THREE.ImageUtils.TextureLoader('texture/earthmap1k.jpg'),
+  bumpMap: THREE.ImageUtils.TextureLoader('texture/earthbump.jpg'),
   bumpScale: 0.3
 })
 // Materiale del secondo pianeta
 const corruptedEarthMaterial = new THREE.MeshPhongMaterial({
   // roughness: 1,
   // metalness: 0,
-  map: THREE.ImageUtils.loadTexture('./texture/earthmap1k.jpg'),
-  bumpMap: THREE.ImageUtils.loadTexture('./texture/earthbump.jpg'),
+  map: THREE.ImageUtils.loadTexture('texture/earthmap1k.jpg'),
+  bumpMap: THREE.ImageUtils.loadTexture('texture/earthbump.jpg'),
   bumpScale: 0.3
 })
 // Griglia della terra
@@ -77,7 +77,7 @@ const cloudGeometry = new THREE.SphereGeometry(0.65, 32, 32)
 // Materiale delle nuvole ('texture/earthCloud.png')
 
 const cloudMetarial = new THREE.MeshPhongMaterial({
-  map: THREE.ImageUtils.loadTexture('./texture/earthCloud.png'),
+  map: THREE.ImageUtils.loadTexture('texture/earthCloud.png'),
   transparent: true
 })
 
@@ -90,7 +90,7 @@ const starGeometry = new THREE.SphereGeometry(80, 64, 64)
 
 // Materiale della galassia
 const starMaterial = new THREE.MeshBasicMaterial({
-  map: THREE.ImageUtils.loadTexture('./texture/galaxy.png'),
+  map: THREE.ImageUtils.loadTexture('texture/galaxy.png'),
   side: THREE.BackSide
 })
 
