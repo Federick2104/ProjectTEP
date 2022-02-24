@@ -8,13 +8,12 @@ html{
     background-color: black;
 } 
 .earth-scene{
-    /* display: none; */
+    display: none; /*riattiva per fare vedere modello*/
     width: auto;
     height: 1010;
     
 }
 .container{
-    position: absolute;
     top: 0%;
     left: 0%;
     width: 100%;
