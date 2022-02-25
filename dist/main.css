@@ -2,12 +2,10 @@
     margin: 0%;
     padding: 0%;
 }
-
-.modello {
+.modello{
     display: absolute;
 }
-
-.html {
+html{
     background-color: black;
 }
 
@@ -19,13 +17,6 @@
 
 }
 
-.earth-scene {
-    display: none;
-    /*riattiva per fare vedere modello*/
-    width: auto;
-    height: 1010;
-
-}
 .container {
     background-color: black;
 
@@ -121,7 +112,7 @@
 
 /* Info-box di associazioni per l'ambiente e rispetto natura */
 #aiutaci {
-    font-size: 30px;
+    font-size: 40px;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     text-align: center;
@@ -446,12 +437,10 @@
 .answ-select {
     background-color: violet;
 }
-
-.answ-title {
+.answ-title{
     text-align: center;
     margin-bottom: 2rem;
 }
-
 .hide {
     display: none;
 }
