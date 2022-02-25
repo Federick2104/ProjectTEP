@@ -2,10 +2,14 @@
     margin: 0%;
     padding: 0%;
 }
-.modello{
+
+.modello {
     display: absolute;
 }
 
+.html {
+    background-color: black;
+}
 
 .earth-scene {
     display: none;
@@ -15,6 +19,13 @@
 
 }
 
+.earth-scene {
+    display: none;
+    /*riattiva per fare vedere modello*/
+    width: auto;
+    height: 1010;
+
+}
 .container {
     background-color: black;
 
@@ -435,10 +446,12 @@
 .answ-select {
     background-color: violet;
 }
-.answ-title{
+
+.answ-title {
     text-align: center;
     margin-bottom: 2rem;
 }
+
 .hide {
     display: none;
 }
