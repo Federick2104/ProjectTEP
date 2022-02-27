@@ -1,6 +1,24 @@
 import './style.css'
 import * as THREE from 'three'
 import AOS from 'aos'
+import GLTFLoader from 'three-gltf-loader'
+
+const loader = new GLTFLoader()
+loader.load(
+  'src/model/untitled.gltf',
+  (gltf) => {
+    // called when the resource is loaded
+    scene.add(gltf.scene)
+  },
+  (xhr) => {
+    // called while loading is progressing
+    console.log(`${(xhr.loaded / xhr.total * 100)}% loaded`)
+  },
+  (error) => {
+    // called when loading has errors
+    console.error('An error happened', error)
+  }
+)
 
 const scene = new THREE.Scene()
 scene.background = new THREE.Color(0x000000)
@@ -146,7 +164,7 @@ const checkRisp = (index) => {
   })
 }
 const mapQuiz = (index) => {
-//   console.log('---->index', index)
+  //   console.log('---->index', index)
   const quiz = document.querySelector('.answ-card')
 
   quiz.innerHTML = ''

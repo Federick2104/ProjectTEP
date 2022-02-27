@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;500&display=swap');
+
 * {
     margin: 0%;
     padding: 0%;
+    font-family: 'Fredoka', sans-serif;
 }
-.modello{
+
+.modello {
     display: absolute;
 }
-html{
+
+html {
     background-color: black;
 }
 
@@ -50,7 +55,6 @@ html{
 .nav-items a {
     text-decoration: none;
     color: white;
-    font-family: 'Poppins', sans-serif;
     font-weight: 200;
 
 }
@@ -71,13 +75,11 @@ html{
 }
 
 .title h1 {
-    font-family: 'Poppins', sans-serif;
     font-weight: 700;
 }
 
 .title p {
     /* text-align: justify; */
-    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     color: rgb(177, 177, 177);
     width: 85%;
@@ -90,7 +92,6 @@ html{
     margin-top: 2rem;
     border: none;
     border-radius: 3rem;
-    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     cursor: pointer;
     background-color: rgb(0, 114, 255);
@@ -113,7 +114,6 @@ html{
 /* Info-box di associazioni per l'ambiente e rispetto natura */
 #aiutaci {
     font-size: 40px;
-    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     text-align: center;
     color: white;
@@ -311,13 +311,16 @@ html{
     }
 }
 
-@media only scree and (max-width: 630px) {
+@media only screen and (max-width: 630px) {
     .nav-menu {
         width: 100%;
     }
 
     .title-container {
         width: 100%;
+    }
+    .card-wrap{
+        flex-direction: column;
     }
 }
 
@@ -363,9 +366,11 @@ html{
 .quiz-title {
     text-align: center;
     margin-bottom: 1rem;
+    font-weight: 500;
 }
 
 .quiz-text {
+    font-weight: 300;
     text-align: justify;
 }
 
@@ -381,8 +386,8 @@ html{
     text-align: center;
     border-radius: 50px;
     background-color: blue;
-    height: 2rem;
-    line-height: 2rem;
+    height: 3rem;
+    line-height: 3rem;
 }
 
 .answ-button:hover, .answ-close {
@@ -391,21 +396,29 @@ html{
 }
 
 .answ-button, .answ-close {
+    font-weight: 500;
     cursor: pointer;
-    margin-top: 1rem;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
     color: white;
     text-align: center;
     border-radius: 50px;
     background-color: blue;
-    height: 2rem;
-    line-height: 2rem;
+    height: 3rem;
+    width: 20rem;
+    line-height: 3rem;
 }
 
 .answ-card {
+    display: flex;
+    flex-direction: column;
     background-color: white;
     border-radius: 50px;
     padding: 2rem;
     margin: 2rem 1rem;
+    min-height: 25rem;
+    transition: all .5s ease-in-out;
 }
 
 .answ-d {
@@ -429,17 +442,25 @@ html{
     text-align: center;
     background-color: lightblue;
     border-radius: 25px;
-    margin: 0.5rem;
-    height: 2rem;
-    line-height: 2rem;
+    margin: 0.125rem;
+    height: 3rem;
+    line-height: 3rem;
 }
 
 .answ-select {
     background-color: violet;
 }
-.answ-title{
+.answ-desc {
+    font-weight: 300;
+}
+.answ-title {
     text-align: center;
     margin-bottom: 2rem;
+}
+footer {
+    width: 100%;
+    min-height: 20rem;
+    background-color: blue;
 }
 .hide {
     display: none;
