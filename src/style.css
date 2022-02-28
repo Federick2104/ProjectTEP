@@ -129,9 +129,11 @@ html {
     min-height: 100vh;
     background: black;
 }
-#FFF{
+
+#FFF {
     font-style: italic;
 }
+
 .info-box {
     position: relative;
     max-width: 100%;
@@ -357,7 +359,8 @@ html {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
-@media only screen and (max-width: 900px){
+
+@media only screen and (max-width: 900px) {
     .info-wrapper {
         display: block;
     }
@@ -410,11 +413,12 @@ html {
     -moz-transition: 0.5s ease;
     opacity: 1;
 }
-.info-button:hover{
+
+.info-button:hover {
     transition: 0.7s ease;
     background-color: rgb(0, 114, 255);
     transform: scale(1.2, 1.2);
-    
+
 }
 
 
@@ -424,11 +428,12 @@ html {
 /* ---------> QUIZ */
 
 .quiz {
-    background-color: lightblue;
-    padding-bottom: 1rem;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(2,0,36,1) 18%, rgba(0,44,134,1) 33%, rgba(30,74,138,1) 43%, rgba(18,91,177,1) 59%, rgba(113,197,249,1) 100%);    padding-bottom: 1rem;
 }
 
 .card-wrap {
+    margin-top: 3rem;
     display: flex;
 }
 
@@ -540,7 +545,7 @@ html {
 footer {
     width: 100%;
     min-height: 20rem;
-    background-color: blue;
+    background-color: #71c5f9;
 }
 
 .hide {
