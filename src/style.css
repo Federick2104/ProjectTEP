@@ -129,7 +129,9 @@ html {
     min-height: 100vh;
     background: black;
 }
-
+#FFF{
+    font-style: italic;
+}
 .info-box {
     position: relative;
     max-width: 100%;
@@ -364,7 +366,8 @@ html {
 .info-card {
     margin: 2rem;
     border-radius: 50px;
-    background-color: white;
+    background-color: #333;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -376,6 +379,8 @@ html {
 
 .info-img {
     height: 10rem;
+    margin-left: 1rem;
+    border-radius: 20px;
 }
 
 .info-text {
@@ -393,7 +398,7 @@ html {
     bottom: 2rem;
     right: 2rem;
     color: white;
-    background-color: #333;
+    background-color: black;
     height: 3rem;
     width: 10rem;
     line-height: 3rem;
