@@ -428,9 +428,8 @@ html {
 /* ---------> QUIZ */
 
 .quiz {
-    background: rgb(0, 0, 0);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(2, 0, 36, 1) 18%, rgba(0, 44, 134, 1) 33%, rgba(30, 74, 138, 1) 43%, rgba(18, 91, 177, 1) 59%, rgba(113, 197, 249, 1) 100%);
-    padding-bottom: 1rem;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(2,0,36,1) 18%, rgba(0,44,134,1) 33%, rgba(30,74,138,1) 43%, rgba(18,91,177,1) 59%, rgba(113,197,249,1) 100%);    padding-bottom: 1rem;
 }
 
 .card-wrap {
@@ -442,9 +441,8 @@ html {
     margin-top: 4rem;
     margin-left: 1rem;
     margin-right: 1rem;
-    background-color: #333;
+    background-color: white;
     border-radius: 50px;
-    color: white;
     padding: 2rem;
 }
 
@@ -459,7 +457,6 @@ html {
     text-align: justify;
 }
 
-/* da fare hover che si espande */
 .quiz-button:hover {
     background-color: lightblue;
     transition: ease-in 150ms;
@@ -471,7 +468,7 @@ html {
     color: white;
     text-align: center;
     border-radius: 50px;
-    background-color: black;
+    background-color: blue;
     height: 3rem;
     line-height: 3rem;
 }
@@ -490,17 +487,16 @@ html {
     color: white;
     text-align: center;
     border-radius: 50px;
-    background-color: black;
+    background-color: blue;
     height: 3rem;
     width: 20rem;
     line-height: 3rem;
 }
 
 .answ-card {
-    color: white;
     display: flex;
     flex-direction: column;
-    background-color: #333;
+    background-color: white;
     border-radius: 50px;
     padding: 2rem;
     margin: 2rem 1rem;
@@ -520,14 +516,13 @@ html {
 
 .answ-r:hover {
     transition: ease-in 150ms;
-    background-color: #71c5f9;
+    background-color: rgb(106, 106, 245);
 }
 
 .answ-r {
     cursor: pointer;
     text-align: center;
-    color: white;
-    background-color: #125bb1;
+    background-color: lightblue;
     border-radius: 25px;
     margin: 0.125rem;
     height: 3rem;
