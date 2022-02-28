@@ -88,27 +88,30 @@ html {
 
 .btn {
     color: white;
+    height: 3rem;
+    width: 10rem;
     padding: 0.5rem 1rem;
     margin-top: 2rem;
+    margin-left: 4rem;
     border: none;
     border-radius: 3rem;
     font-weight: 500;
     cursor: pointer;
-    background-color: rgb(0, 114, 255);
+    background-color: #333;
     transition: 0.5s ease;
     -webkit-transition: 0.5s ease;
     -moz-transition: 0.5s ease;
     opacity: 1;
-    transition: 0.3s ease;
+
 
 
 }
 
 .btn:hover {
     opacity: 0.8;
-
+    background-color: rgb(0, 114, 255);
     /** default is 1, scale it to 1.5 */
-    transform: scale(1.2, 1.2);
+    transform: scale(1.5, 1.5);
 }
 
 /* Info-box di associazioni per l'ambiente e rispetto natura */
@@ -390,12 +393,23 @@ html {
     bottom: 2rem;
     right: 2rem;
     color: white;
-    background-color: black;
+    background-color: #333;
     height: 3rem;
     width: 10rem;
     line-height: 3rem;
     text-align: center;
     border-radius: 50px;
+    cursor: pointer;
+    transition: 0.6s ease;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    opacity: 1;
+}
+.info-button:hover{
+    transition: 0.7s ease;
+    background-color: rgb(0, 114, 255);
+    transform: scale(1.2, 1.2);
+    
 }
 
 
