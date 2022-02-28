@@ -319,7 +319,8 @@ html {
     .title-container {
         width: 100%;
     }
-    .card-wrap{
+
+    .card-wrap {
         flex-direction: column;
     }
 }
@@ -344,10 +345,68 @@ html {
     }
 }
 
+/* card con le foto */
+
+.info-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+@media only screen and (max-width: 900px){
+    .info-wrapper {
+        display: block;
+    }
+}
+
+.info-card {
+    margin: 2rem;
+    border-radius: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    position: relative;
+    max-width: 40rem;
+
+}
+
+.info-img {
+    height: 10rem;
+}
+
+.info-text {
+    margin-right: 3rem;
+    margin-left: 3rem;
+    margin-bottom: 4rem;
+    font-weight: 300;
+    margin-bottom: 4rem;
+}
+
+.info-button {
+    position: absolute;
+    color: grey;
+    text-decoration: none;
+    bottom: 2rem;
+    right: 2rem;
+    color: white;
+    background-color: black;
+    height: 3rem;
+    width: 10rem;
+    line-height: 3rem;
+    text-align: center;
+    border-radius: 50px;
+}
+
+
+
+
+
 /* ---------> QUIZ */
 
 .quiz {
     background-color: lightblue;
+    padding-bottom: 1rem;
 }
 
 .card-wrap {
@@ -418,7 +477,6 @@ html {
     padding: 2rem;
     margin: 2rem 1rem;
     min-height: 25rem;
-    transition: all .5s ease-in-out;
 }
 
 .answ-d {
@@ -450,18 +508,22 @@ html {
 .answ-select {
     background-color: violet;
 }
+
 .answ-desc {
     font-weight: 300;
 }
+
 .answ-title {
     text-align: center;
     margin-bottom: 2rem;
 }
+
 footer {
     width: 100%;
     min-height: 20rem;
     background-color: blue;
 }
+
 .hide {
     display: none;
 }
