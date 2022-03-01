@@ -5,8 +5,8 @@ import AOS from 'aos'
 
 const resizing = () => {
   console.log('resizeeeeeeeee')
-  const w = window.innerWidth
-  const h = window.innerHeight
+  const w = window.innerWidth - 30
+  const h = window.innerHeight - 30
 
   // const loader = new GLTFLoader()
   // loader.load(
