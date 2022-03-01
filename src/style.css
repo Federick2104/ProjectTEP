@@ -238,7 +238,7 @@ html {
     
 }
 /*** Responsive ****/
-@media only screen and (max-width: 1085px) {
+@media only screen and (max-width: 1050px) {
     .nav-menu {
         padding: 0.5rem;
     }
