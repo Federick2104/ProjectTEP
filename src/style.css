@@ -230,7 +230,13 @@ html {
         grid-row: unset !important;
     }
 }
-
+@media (min-width: 1050px){
+    .info-box{
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-rows: 1.4fr 1.4fr 1.4fr;
+    }
+    
+}
 /*** Responsive ****/
 @media only screen and (max-width: 1085px) {
     .nav-menu {
