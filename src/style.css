@@ -290,7 +290,7 @@ html {
 .card-wrap {
     margin-top: 3rem;
     display: flex;
-}
+}   
 
 .quiz-card {
     margin-top: 4rem;
@@ -450,6 +450,10 @@ footer {
     .info-box .box {
         grid-column: unset !important;
         grid-row: unset !important;
+    }
+    .card-wrap{
+        flex-direction: column;
+       
     }
     
 }
