@@ -2,3 +2,4 @@ node_modules
 dist
 .firebase
 .DS_Store
+dist
