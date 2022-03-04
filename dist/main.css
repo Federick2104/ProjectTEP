@@ -5,7 +5,7 @@
     font-family: 'Fredoka', sans-serif;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
 }
@@ -216,7 +216,7 @@ html {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     justify-items: center;
-    
+
 }
 
 .info-card {
@@ -230,7 +230,7 @@ html {
     height: 20rem;
     position: relative;
     max-width: 40rem;
-   
+
 
 }
 
@@ -283,13 +283,13 @@ html {
     background: rgb(0, 0, 0);
     background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(2, 0, 36, 1) 18%, rgba(0, 44, 134, 1) 33%, rgba(30, 74, 138, 1) 43%, rgba(18, 91, 177, 1) 59%, rgba(113, 197, 249, 1) 100%);
     padding-bottom: 1rem;
-    
+
 }
 
 .card-wrap {
     margin-top: 3rem;
     display: flex;
-}   
+}
 
 .quiz-card {
     margin-top: 4rem;
@@ -409,9 +409,20 @@ footer {
 .hide {
     display: none;
 }
-.prova{
-    color: red;
+
+.parallax-container {
+    margin: 0 auto;
+    background: #333;
+
 }
+
+.parallax-image {
+    background: url(7347bdde3b439fe842a5.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 500px;
+}
+
 /*** Responsive ****/
 @media only screen and (max-width: 1050px) {
     .nav-menu {
@@ -434,12 +445,13 @@ footer {
         font-size: 0.8rem;
     }
 }
+
 @media only screen and (max-width: 900px) {
     .info-wrapper {
         display: block;
-       
+
     }
-    
+
 }
 
 @media (max-width: 991px) {
@@ -452,19 +464,21 @@ footer {
         grid-column: unset !important;
         grid-row: unset !important;
     }
-    .card-wrap{
+
+    .card-wrap {
         flex-direction: column;
-       
+
     }
-    
+
 }
-@media (min-width: 1050px){
-    .info-box{
+
+@media (min-width: 1050px) {
+    .info-box {
         grid-template-columns: 2fr 1fr 2fr;
         grid-template-rows: 1.4fr 1.4fr 1.4fr;
     }
 
-    
+
 }
 
 /*# sourceMappingURL=main.css.map*/

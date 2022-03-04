@@ -179,6 +179,7 @@ window.onload = () => {
   window.onresize = resizing
   const quiz = document.querySelector('.answ-card')
   const buttons = document.querySelectorAll('.quiz-button')
+  // document.querySelector('.parallax-image').style.background = 'background: url(./img/pazzoimg.jpeg) no-repeat center;'
   buttons.forEach((b, i) => {
     b.addEventListener('click', function () {
       mapQuiz(i)
