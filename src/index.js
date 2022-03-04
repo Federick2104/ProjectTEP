@@ -1,8 +1,9 @@
-import AOS from 'aos'
+import AOS, { init } from 'aos'
 import { getPage } from './js/get-page'
 import { mapQuiz } from './js/map-quiz'
 import { hide } from './js/check-risp'
 import { resizing } from './js/resize'
+import { init as initModel } from './js/gltfloader'
 
 // -------------------------------------------------------------------------------- //
 // -------------------------------------------------------------------------------- //
@@ -14,9 +15,11 @@ window.onload = () => {
 
   console.log('====PAGE', getPage())
   if (getPage() === 'game') {
+    initModel()
     console.log('====dsfdsgdsg')
   }
   if (getPage() === 'home') {
+    init()
     resizing()
     window.onresize = resizing
     const quiz = document.querySelector('.answ-card')

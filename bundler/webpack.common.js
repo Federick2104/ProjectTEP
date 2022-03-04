@@ -11,6 +11,26 @@ module.exports = {
     path: path.resolve(__dirname, '../dist')
   },
   devtool: 'source-map',
+  module:
+    {
+      rules:
+        [
+          {
+            test: /\.(glb|gltf)$/,
+            use:
+                [
+                  {
+                    loader: 'file-loader',
+                    options:
+                        {
+                          outputPath: './model',
+                          name: '[name].[ext]'
+                        }
+                  }
+                ]
+          }
+        ]
+    },
   plugins:
     [
       new CopyWebpackPlugin({
