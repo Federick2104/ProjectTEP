@@ -119,6 +119,12 @@ const resizing = () => {
     renderer.render(scene, camera)
   }
   animate()
+  // while (false) {
+  //   if (figure[0].position.x > 0 && figure[0].position.y > 0) {
+  //     materiali[0] = new THREE.MeshLambertMaterial({ color: 0x827717 })
+  //     materiali[0] = new THREE.MeshLambertMaterial({ color: 0x827717 })
+  //   }
+  // }
 }
 
 AOS.init() // Animzioni on scroll realizzate da michalsnik at michalsnik.github.io
