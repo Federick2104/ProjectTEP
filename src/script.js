@@ -4,7 +4,6 @@ import AOS from 'aos'
 import { DragControls } from 'three/examples/jsm/controls/DragControls'
 
 const resizing = () => {
-  console.log('resizeeeeeeeee')
   const w = window.innerWidth - 30
   const h = window.innerHeight - 30
 

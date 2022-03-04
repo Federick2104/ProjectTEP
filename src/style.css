@@ -55,6 +55,7 @@ html {
 
 
 .title-container {
+    pointer-events: none;
     position: absolute;
     width: 50%;
     height: auto;
@@ -81,11 +82,15 @@ html {
 }
 
 .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: all;
     color: white;
     height: 3rem;
     width: 10rem;
     padding: 0.5rem 1rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
     margin-left: 4rem;
     border: none;
     border-radius: 3rem;
@@ -96,16 +101,14 @@ html {
     -webkit-transition: 0.5s ease;
     -moz-transition: 0.5s ease;
     opacity: 1;
-
-
-
+    font-size: 1.125rem;
 }
 
 .btn:hover {
     opacity: 0.8;
     background-color: rgb(0, 114, 255);
     /** default is 1, scale it to 1.5 */
-    transform: scale(1.5, 1.5);
+    transform: scale(1.25, 1.25);
 }
 
 /* Info-box di associazioni per l'ambiente e rispetto natura */
@@ -122,6 +125,9 @@ html {
     align-self: center;
     min-height: 100vh;
     background: black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
 }
 
 #FFF {
@@ -136,7 +142,6 @@ html {
     grid-template-rows: minmax(100px, auto);
     grid-gap: 10px;
     grid-auto-flow: dense;
-    margin: 40px;
 }
 
 .info-box .box {
@@ -213,6 +218,8 @@ html {
 /* card con le foto */
 
 .info-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -313,11 +320,6 @@ html {
     text-align: justify;
 }
 
-.quiz-button:hover {
-    background-color: lightblue;
-    transition: ease-in 150ms;
-}
-
 /* hover coloro con effetto todo */
 .quiz-button {
     cursor: pointer;
@@ -328,12 +330,20 @@ html {
     background-color: black;
     height: 3rem;
     line-height: 3rem;
+    cursor: pointer;
+    transition: 0.6s ease;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    opacity: 1;
 }
 
-.answ-button:hover, .answ-close {
-    background-color: lightblue;
-    transition: ease-in 150ms;
+.quiz-button:hover {
+    transition: 0.7s ease;
+    background-color: rgb(0, 114, 255);
+
+
 }
+
 
 /* hover effect todo */
 .answ-button, .answ-close {
@@ -347,8 +357,18 @@ html {
     border-radius: 50px;
     background-color: black;
     height: 3rem;
-    width: 20rem;
+    width: 50vw;
     line-height: 3rem;
+    cursor: pointer;
+    transition: 0.6s ease;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+    opacity: 1;
+}
+
+.answ-button:hover, .answ-close:hover {
+    transition: 0.7s ease;
+    background-color: rgb(0, 114, 255);
 }
 
 .answ-card {
@@ -375,13 +395,13 @@ html {
 
 .answ-r:hover {
     transition: ease-in 150ms;
-    background-color: #71c5f9;
+    background-color: rgb(0, 114, 255);
 }
 
 .answ-r {
     cursor: pointer;
     text-align: center;
-    background-color: #1e4a8a;
+    background-color: #777;
     border-radius: 25px;
     margin: 0.125rem;
     height: 3rem;
@@ -389,7 +409,7 @@ html {
 }
 
 .answ-select {
-    background-color: rgb(118, 5, 118);
+    background-color: rgb(0, 114, 255);
 }
 
 .answ-desc {
@@ -402,9 +422,17 @@ html {
 }
 
 footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    min-height: 20rem;
+    min-height: 10rem;
     background-color: #71c5f9;
+}
+
+.footer-text {
+    font-weight: 500;
+    font-size: 2rem;
 }
 
 .hide {
@@ -421,7 +449,7 @@ footer {
     display: grid;
     justify-content: center;
     align-content: center;
-    background: url(./img/fane.jpg) no-repeat center;
+    background: url(./img/fane.jpeg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
     height: 300px;
@@ -446,22 +474,37 @@ footer {
     .btn {
         padding: 0.5rem 1rem;
         margin-top: 1.7rem;
-        font-size: 0.8rem;
     }
 }
 
-@media only screen and (max-width: 900px) {
-    .info-wrapper {
-        display: block;
-    }
-    .info-card{
+
+@media (max-width: 500px) {
+    .info-card {
+        flex-direction: column;
         margin: auto;
         margin-bottom: 2rem;
+        padding: 0.5rem;
     }
 
+    .info-img {
+        margin-left: 0;
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .info-button {
+        margin: auto;
+        position: relative;
+        right: inherit;
+        bottom: inherit;
+    }
 }
 
 @media (max-width: 991px) {
+    .info-wrapper{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
     .info-box {
         grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
         grid-template-rows: minmax(auto, auto);
