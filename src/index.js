@@ -1,7 +1,7 @@
-import './style.css'
 import * as THREE from 'three'
 import AOS from 'aos'
 import { DragControls } from 'three/examples/jsm/controls/DragControls'
+import { getPage } from './game'
 
 const resizing = () => {
   const w = window.innerWidth - 30
@@ -185,17 +185,23 @@ const domandeQuiz = [{
 }]
 
 window.onload = () => {
-  resizing()
-  window.onresize = resizing
-  const quiz = document.querySelector('.answ-card')
-  const buttons = document.querySelectorAll('.quiz-button')
-  // document.querySelector('.parallax-image').style.background = 'background: url(./img/pazzoimg.jpeg) no-repeat center;'
-  buttons.forEach((b, i) => {
-    b.addEventListener('click', function () {
-      mapQuiz(i)
-      hide(quiz)
+  console.log('====PAGE', getPage())
+  if (getPage() === 'game') {
+    console.log('====dsfdsgdsg')
+  }
+  if (getPage() === 'home') {
+    resizing()
+    window.onresize = resizing
+    const quiz = document.querySelector('.answ-card')
+    const buttons = document.querySelectorAll('.quiz-button')
+    // document.querySelector('.parallax-image').style.background = 'background: url(./img/pazzoimg.jpeg) no-repeat center;'
+    buttons.forEach((b, i) => {
+      b.addEventListener('click', function () {
+        mapQuiz(i)
+        hide(quiz)
+      })
     })
-  })
+  }
 }
 
 // le due risposte selezionate
