@@ -409,7 +409,9 @@ footer {
 .hide {
     display: none;
 }
-
+.prova{
+    color: red;
+}
 /*** Responsive ****/
 @media only screen and (max-width: 1050px) {
     .nav-menu {
