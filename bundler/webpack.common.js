@@ -65,7 +65,12 @@ module.exports = {
           test: /\.(jpg|png|gif|svg)$/,
           type: 'asset'
         },
+        {
+          // match all .gltf files
+          test: /\.(gltf|bin|glb)$/,
+          loader: '@jpweeks/gltf-loader'
 
+        },
         // Fonts
         {
           test: /\.(ttf|eot|woff|woff2)$/,

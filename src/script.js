@@ -3,8 +3,6 @@ import * as THREE from 'three'
 import AOS from 'aos'
 import { DragControls } from 'three/examples/jsm/controls/DragControls'
 
-// import GLTFLoader from 'three-gltf-loader'
-
 const resizing = () => {
   console.log('resizeeeeeeeee')
   const w = window.innerWidth - 30
@@ -20,6 +18,19 @@ const resizing = () => {
   scene.add(light)
 
   // camera
+  // const loader = new GLTFLoader()
+  // loader.load(
+  //   './img/untitled.gltf',
+  //   function (gltf) {
+  //     scene.add(gltf.scene)
+  //   },
+  //   (xhr) => {
+  //     console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+  //   },
+  //   (error) => {
+  //     console.log(error)
+  //   }
+  // )
 
   const width = 10
   const height = width * (h / w)

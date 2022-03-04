@@ -417,10 +417,13 @@ footer {
 }
 
 .parallax-image {
+    display: grid;
+    justify-content: center;
+    align-content: center;
     background: url(7347bdde3b439fe842a5.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
-    height: 500px;
+    height: 300px;
 }
 
 /*** Responsive ****/
