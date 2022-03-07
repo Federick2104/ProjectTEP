@@ -234,7 +234,6 @@ html {
 .info-card {
     margin: 2rem;
     border-radius: 50px;
-    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
