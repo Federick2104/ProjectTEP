@@ -34,6 +34,10 @@ body::-webkit-scrollbar-thumb {
             color-stop(0.86, rgb(28, 58, 148)));
 }
 
+body {
+    background-color: black;
+}
+
 a {
     text-decoration: none;
     color: white;
@@ -235,30 +239,34 @@ html {
     justify-content: center;
     align-items: center;
     height: 20rem;
-    width: 30rem;
+    width: 40vw;
     background-size: cover;
     background-repeat: no-repeat;
 }
-.info-card:nth-child(1){
-    background-image: url('../img/alberiAB.jpeg');    
+
+.info-card:nth-child(1) {
+    background-image: url('../img/alberiAB.jpeg');
 }
-.info-card:nth-child(2){
+
+.info-card:nth-child(2) {
     background-image: url('../img/plastica.jpeg');
 }
-.info-card:nth-child(3){
+
+.info-card:nth-child(3) {
     background-image: url('../img/rifiuti1.jpeg');
 }
-.info-card:nth-child(4){
+
+.info-card:nth-child(4) {
     background-image: url('../img/elettrica.jpeg');
 }
 
 .info-text {
+    font-size: 1.125rem;
     position: absolute;
     background-color: white;
     padding: 30px;
     margin: auto;
     color: #333;
-    display: none;
     height: 3rem;
     width: 15rem;
     color: black;
@@ -266,15 +274,20 @@ html {
     text-align: center;
     padding-top: 5px;
     border-radius: 20px;
-    opacity: 0.7;
     transition: 0.6s ease;
+    opacity: 0;
     -webkit-transition: 0.5s ease;
     -moz-transition: 0.5s ease;
 
 }
-.info-card:hover .info-text{
-    transition: 0.7s ease;
-    display: inline;
+
+.info-card:hover .info-text {
+    opacity: 0.85;
+    transition: 0.6s ease;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+
+
 }
 
 .info-button {
@@ -316,33 +329,40 @@ html {
 }
 
 .card-wrap {
-    margin-top: 3rem;
+
     display: flex;
 }
 
 .quiz-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 4rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #333;
     color: white;
     border-radius: 50px;
     padding: 2rem;
-    width: 30rem;
     height: 15rem;
+    width: 25vw;
     background-size: cover;
     background-repeat: no-repeat;
 }
-.quiz-card:nth-child(1){
+
+.quiz-card:nth-child(1) {
     background-image: url('../img/sea.jpeg');
     color: black;
 
 }
-.quiz-card:nth-child(2){
+
+.quiz-card:nth-child(2) {
     background-image: url('../img/smoke.jpeg');
- 
+
 }
-.quiz-card:nth-child(3){
+
+.quiz-card:nth-child(3) {
     background-image: url('../img/mare.webp');
 
 }
@@ -368,7 +388,6 @@ html {
 /* hover coloro con effetto todo */
 .quiz-button {
     cursor: pointer;
-    margin-top: 1rem;
     color: white;
     text-align: center;
     border-radius: 50px;
@@ -380,6 +399,8 @@ html {
     -webkit-transition: 0.5s ease;
     -moz-transition: 0.5s ease;
     opacity: 1;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .quiz-button:hover {
@@ -524,33 +545,22 @@ footer {
         padding: 0.5rem 1rem;
         margin-top: 1.7rem;
     }
-}
 
-
-@media (max-width: 500px) {
-    .info-card {
-        flex-direction: column;
-        margin: auto;
-        margin-bottom: 2rem;
-        padding: 0.5rem;
+    .info-box {
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-rows: 1.4fr 1.4fr 1.4fr;
     }
-
-    .info-img {
-        margin-left: 0;
-        width: 30vw;
-        height: 30vw;
-    }
-
-    .info-button {
-        margin: auto;
-        position: relative;
-        right: inherit;
-        bottom: inherit;
-    }
-    
 }
 
 @media (max-width: 991px) {
+    .footer-text {
+        font-size: 1.5rem;
+    }
+
+    .info-card {
+        width: 80vw;
+    }
+
     .info-wrapper {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -571,13 +581,40 @@ footer {
 
     }
 
+    .quiz-card {
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
 
-@media (min-width: 1050px) {
-    .info-box {
-        grid-template-columns: 2fr 1fr 2fr;
-        grid-template-rows: 1.4fr 1.4fr 1.4fr;
-    }
-    
 
+@media (max-width: 500px) {
+
+
+    .info-card {
+        width: 80vw;
+        flex-direction: column;
+        margin: auto;
+        margin-bottom: 2rem;
+        padding: 0.5rem;
+    }
+
+    .info-img {
+        margin-left: 0;
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .info-button {
+        margin: auto;
+        position: relative;
+        right: inherit;
+        bottom: inherit;
+    }
+
+    .footer-text {
+        font-size: 0.5rem;
+    }
 }
