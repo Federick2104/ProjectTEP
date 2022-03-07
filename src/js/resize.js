@@ -127,10 +127,97 @@ export const resizing = () => {
     renderer.render(scene, camera)
   }
   animate()
-  // while (false) {
-  //   if (figure[0].position.x > 0 && figure[0].position.y > 0) {
-  //     materiali[0] = new THREE.MeshLambertMaterial({ color: 0x827717 })
-  //     materiali[0] = new THREE.MeshLambertMaterial({ color: 0x827717 })
-  //   }
-  // }
+}
+
+// ---------------------------------------- ----------------------------------------
+// ---------------------------------------- ----------------------------------------
+//  Footer con cubi che girano dei creatori (three.js scene)
+// ---------------------------------------- ----------------------------------------
+// ---------------------------------------- ----------------------------------------
+
+export const footercubes = () => {
+  const w = window.innerWidth - 100
+  const h = window.innerHeight - 100
+
+  const scene2 = new THREE.Scene()
+  scene2.add(new THREE.AxesHelper(5))
+  scene2.background = new THREE.Color(0x71c5f9)
+  const canvas2 = document.querySelector('.cubo-GS')
+
+  const light = new THREE.PointLight()
+  light.position.set(10, 10, 10)
+  scene2.add(light)
+
+  const width = 10
+  const height = width * (h / w)
+  const camera = new THREE.OrthographicCamera(
+    width / -2, // left
+    width / 2, // right
+    height / 2, // top
+    height / -2, // bottom
+    1, // near
+    100 // far
+  )
+
+  camera.position.set(4, 4, 4)
+  camera.lookAt(0, 0, 0)
+
+  const dirLight = new THREE.DirectionalLight(0xffffff, 0.6)
+  dirLight.position.set(10, 20, 0) // x, y, z
+  scene2.add(dirLight)
+
+  const renderer2 = new THREE.WebGLRenderer(
+    { antialias: true, canvas: canvas2 })
+
+  const geometry2 = new THREE.BoxGeometry(1.5, 1.5, 1.5)
+
+  // mateariali
+  const materiali2 = [
+    new THREE.MeshLambertMaterial({ color: 0x12AAB8 }), // Gherghina
+    new THREE.MeshLambertMaterial({ color: 0xfccb00 }) // Schianchi
+  ]
+
+  // figure
+  const figure2 = [
+    new THREE.Mesh(geometry2, materiali2[0]),
+    new THREE.Mesh(geometry2, materiali2[1])
+  ]
+  figure2[0].position.x = -5
+  figure2[0].position.y = -3
+  figure2[1].position.x = 5
+  figure2[1].position.y = 2
+
+  figure2.forEach((c) => scene2.add(c))
+
+  const controls = new DragControls(figure2, camera, renderer2.domElement)
+  controls.addEventListener('dragstart', function (event) {
+    event.object.material.opacity = 0.33
+  })
+  controls.addEventListener('dragend', function (event) {
+    event.object.material.opacity = 1
+  })
+  controls.enableDamping = true
+
+  // Rendering profile
+
+  renderer2.setSize(w, h)
+  renderer2.render(scene2, camera)
+
+  // Animazione della terra che gira
+  function animate2 () {
+    window.requestAnimationFrame(animate2)
+
+    figure2[0].rotation.x += 0
+    figure2[0].rotation.y += 0.01
+    figure2[1].rotation.x += 0
+    figure2[1].rotation.y += 0.01
+
+    // controls.update()
+
+    render()
+  }
+  const render = () => {
+    renderer2.render(scene2, camera)
+  }
+  animate2()
 }

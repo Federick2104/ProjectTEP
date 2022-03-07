@@ -456,8 +456,10 @@ footer {
 }
 
 .footer-text {
+    pointer-events: none;
     font-weight: 500;
     font-size: 2rem;
+    position: absolute;
 }
 
 .hide {

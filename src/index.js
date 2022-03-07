@@ -2,7 +2,7 @@ import AOS, { init } from 'aos'
 import { getPage } from './js/get-page'
 import { mapQuiz } from './js/map-quiz'
 import { hide } from './js/check-risp'
-import { resizing } from './js/resize'
+import { resizing, footercubes } from './js/resize'
 import { init as initModel } from './js/gltfloader'
 
 // -------------------------------------------------------------------------------- //
@@ -21,6 +21,7 @@ window.onload = () => {
   if (getPage() === 'home') {
     init()
     resizing()
+    footercubes()
     window.onresize = resizing
     const quiz = document.querySelector('.answ-card')
     const buttons = document.querySelectorAll('.quiz-button')
