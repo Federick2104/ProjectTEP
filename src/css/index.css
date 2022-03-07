@@ -320,7 +320,11 @@ html {
     font-weight: 300;
     text-align: justify;
 }
+.quiz-img{
+    width: 20vh;
+    height: 10vh;
 
+}
 /* hover coloro con effetto todo */
 .quiz-button {
     cursor: pointer;
