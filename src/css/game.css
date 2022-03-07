@@ -1,3 +1,9 @@
-.prova {
-    color: blue;
+.testoP {
+    color: white;
+    font-size: 100px;
+    font-weight: bolder;
+    text-align: center;
+}
+body{
+    background-color: black;
 }
