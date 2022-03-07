@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;500&display=swap');
+
 .testoP {
     color: white;
     font-size: 100px;
     font-weight: bolder;
+    text-align: center;
+}
+.info-game{
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
     text-align: center;
 }
 body{
