@@ -6,7 +6,7 @@ export const hide = (obj) => {
 // controllo delle risposte
 export const checkRisp = (index) => {
   const quiz = document.querySelector('.answ-card')
-
+  const cardW = document.querySelector('.card-wrap')
   if (scope.sel1 === domandeQuiz[index].c1 && scope.sel2 === domandeQuiz[index].c2) {
     quiz.innerHTML = `
       <div class="answ-title">Corretto!</div>
@@ -22,5 +22,6 @@ export const checkRisp = (index) => {
   }
   document.querySelector('.answ-close').addEventListener('click', function () {
     hide(quiz)
+    cardW.scrollIntoView()
   })
 }
