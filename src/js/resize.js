@@ -1,8 +1,8 @@
 import * as THREE from 'three'
 import { DragControls } from 'three/examples/jsm/controls/DragControls'
 export const resizing = () => {
-  const w = window.innerWidth - 30
-  const h = window.innerHeight - 30
+  const w = window.innerWidth - 10
+  const h = window.innerHeight
 
   const scene = new THREE.Scene()
   // scene.add(new THREE.AxesHelper(5))
