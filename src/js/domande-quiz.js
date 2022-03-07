@@ -19,11 +19,11 @@ export const domandeQuiz = [{
   c2: 2,
   desc: 'Greve zi; Il Mediterraneo è tra i mari più inquinati dalla plastica: si trovano microplastiche e macroplastiche dalla superficie ai fondali e lungo lintero perimetro costiero.'
 }, {
-  d1: 'Quale oggetto è il più inquinante per lambiente?',
+  d1: 'Quale oggetto è il più inquinante per l\'ambiente?',
   risp1: ['Chewing Gum', 'Pneumatico', 'Sigarette', 'Cotton Fioc'],
   c1: 2,
 
-  d2: 'Dove si trova linceneritore più grande dEuropa?',
+  d2: 'Dove si trova l\'inceneritore più grande d\'Europa?',
   risp2: ['Monaco', 'Brescia', 'Stoccolma', 'Le Mans'],
   c2: 2,
   desc: 'Greve zi'
