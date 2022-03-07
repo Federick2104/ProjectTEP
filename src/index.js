@@ -26,6 +26,9 @@ window.onload = () => {
       resizing()
       footercubes()
     }
+    const up = document.querySelector('.up')
+    const body = document.querySelector('body')
+    up.addEventListener('click', function () { body.scrollIntoView() })
     const quiz = document.querySelector('.answ-card')
     const buttons = document.querySelectorAll('.quiz-button')
     buttons.forEach((b, i) => {
