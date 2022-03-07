@@ -1,6 +1,5 @@
 import * as THREE from 'three'
 import { DragControls } from 'three/examples/jsm/controls/DragControls'
-
 export const resizing = () => {
   const w = window.innerWidth - 30
   const h = window.innerHeight - 30
@@ -11,7 +10,7 @@ export const resizing = () => {
   const canvas1 = document.querySelector('.webgl')
 
   const light = new THREE.PointLight()
-  light.position.set(10, 10, 10)
+  light.position.set(10, 10, 1)
   scene.add(light)
 
   // camera
@@ -45,18 +44,24 @@ export const resizing = () => {
 
   // luce
 
-  // const ambientlight = new THREE.AmbientLight(0xffffff, 0.6)
-  // scene.add(ambientlight)
+  const ambientlight = new THREE.AmbientLight(0xffffff, 0.2)
+  scene.add(ambientlight)
 
   // // luce direzionale
-  const dirLight = new THREE.DirectionalLight(0xffffff, 0.6)
-  dirLight.position.set(10, 20, 0) // x, y, z
-  scene.add(dirLight)
+  // const dirLight = new THREE.DirectionalLight(0xffffff, 0.6)
+  // dirLight.position.set(20, 20, 0) // x, y, z
+  // scene.add(dirLight)
 
   const renderer = new THREE.WebGLRenderer(
     { antialias: true, canvas: canvas1 })
 
   const geometry = new THREE.BoxGeometry()
+  const geometryCono = new THREE.CylinderBufferGeometry(0.7, 0, 1.5, 32)
+  const geometrySphere = new THREE.SphereGeometry(0.8, 50, 50)
+  const geometryCilinder = new THREE.CylinderBufferGeometry(0.8, 0.8, 0.3, 32)
+  // const geometryText = new THREE.TextBufferGeometry('3d Text',{
+  //   font, size: 30, height: 30, curveSegments: 20
+  // })
 
   // const geometrySphere = new THREE.SphereGeometry()
 
@@ -72,9 +77,9 @@ export const resizing = () => {
   // figure
   const figure = [
     new THREE.Mesh(geometry, materiali[0]),
-    new THREE.Mesh(geometry, materiali[1]),
-    new THREE.Mesh(geometry, materiali[2]),
-    new THREE.Mesh(geometry, materiali[3]),
+    new THREE.Mesh(geometrySphere, materiali[1]),
+    new THREE.Mesh(geometryCono, materiali[2]),
+    new THREE.Mesh(geometryCilinder, materiali[3]),
     new THREE.Mesh(geometry, materiali[4])
   ]
   figure[0].position.x = -0.5
@@ -180,7 +185,8 @@ export const footercubes = () => {
   const renderer2 = new THREE.WebGLRenderer(
     { antialias: true, canvas: canvas2 })
 
-  const geometry2 = new THREE.BoxGeometry(1.5, 1.5, 1.5)
+  // const geometry2 = new THREE.BoxGeometry(1.5, 1.5, 1.5)
+  const geometryCoin = new THREE.CylinderBufferGeometry(0.8, 0.8, 0.3, 32)
 
   // mateariali
   const materiali2 = [
@@ -190,8 +196,8 @@ export const footercubes = () => {
 
   // figure
   const figure2 = [
-    new THREE.Mesh(geometry2, materiali2[0]),
-    new THREE.Mesh(geometry2, materiali2[1])
+    new THREE.Mesh(geometryCoin, materiali2[0]),
+    new THREE.Mesh(geometryCoin, materiali2[1])
   ]
   figure2[0].position.x = -5
   figure2[0].position.y = -3
@@ -224,9 +230,9 @@ export const footercubes = () => {
     window.requestAnimationFrame(animate2)
 
     figure2[0].rotation.x += 0
-    figure2[0].rotation.y += 0.01
+    figure2[0].rotation.z += 0.01
     figure2[1].rotation.x += 0
-    figure2[1].rotation.y += 0.01
+    figure2[1].rotation.z += 0.01
 
     // controls.update()
 
