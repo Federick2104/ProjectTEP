@@ -550,10 +550,13 @@ footer {
 }
 
 /*** Responsive ****/
-@media only screen and (max-width: 1050px) {
-    .nav-menu {
-        padding: 0.5rem;
+@media (max-width: 1700px) {
+    .info-box{
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-rows: 1.4fr 1.4fr 1.4fr;
     }
+}
+@media only screen and (max-width: 1050px) {
 
     .title h1 {
         font-size: 1.8rem;
