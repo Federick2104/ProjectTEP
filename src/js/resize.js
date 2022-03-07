@@ -138,7 +138,6 @@ export const resizing = () => {
 export const footercubes = () => {
   const w = window.innerWidth - 100
   const h = window.innerHeight - 100
-
   const scene2 = new THREE.Scene()
   scene2.add(new THREE.AxesHelper(5))
   scene2.background = new THREE.Color(0x71c5f9)
@@ -173,8 +172,8 @@ export const footercubes = () => {
 
   // mateariali
   const materiali2 = [
-    new THREE.MeshLambertMaterial({ color: 0x12AAB8 }), // Gherghina
-    new THREE.MeshLambertMaterial({ color: 0xfccb00 }) // Schianchi
+    new THREE.MeshLambertMaterial({ color: 0xFCD30A }), // Gherghina
+    new THREE.MeshLambertMaterial({ color: 0xFC0A6B }) // Schianchi
   ]
 
   // figure
@@ -195,6 +194,14 @@ export const footercubes = () => {
   })
   controls.addEventListener('dragend', function (event) {
     event.object.material.opacity = 1
+  })
+  controls.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      figure2[0].rotation.x += 0
+      figure2[0].rotation.y += 0.01
+      figure2[1].rotation.x += 0
+      figure2[1].rotation.y += 0.01
+    }
   })
   controls.enableDamping = true
 
