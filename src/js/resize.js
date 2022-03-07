@@ -153,8 +153,8 @@ export const footercubes = () => {
   // },
   //   y: Math.PI
   // });
-  const w = window.innerWidth - 100
-  const h = window.innerHeight - 100
+  const w = window.innerWidth - 10
+  const h = window.innerHeight
   const scene2 = new THREE.Scene()
   // scene2.add(new THREE.AxesHelper(5))
   scene2.background = new THREE.Color(0x71c5f9)

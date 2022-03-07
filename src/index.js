@@ -23,6 +23,7 @@ window.onload = () => {
     resizing()
     footercubes()
     window.onresize = resizing
+    window.onresize = footercubes
     const quiz = document.querySelector('.answ-card')
     const buttons = document.querySelectorAll('.quiz-button')
     buttons.forEach((b, i) => {
