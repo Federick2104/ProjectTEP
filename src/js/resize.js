@@ -90,11 +90,11 @@ export const resizing = () => {
   figure.forEach((c) => scene.add(c))
 
   const controls = new DragControls(figure, camera, renderer.domElement)
-  controls.addEventListener('dragstart', function (event) {
-    event.object.material.opacity = 0.33
+  controls.addEventListener('dragstart', function (e) {
+    e.object.material.opacity = 0.33
   })
-  controls.addEventListener('dragend', function (event) {
-    event.object.material.opacity = 1
+  controls.addEventListener('dragend', function (e) {
+    e.object.material.opacity = 1
   })
   controls.enableDamping = true
 
@@ -136,10 +136,22 @@ export const resizing = () => {
 // ---------------------------------------- ----------------------------------------
 
 export const footercubes = () => {
+  // gsap.registerPlugin(ScrollTrigger);
+
+  // gsap.to(mesh.rotation, {
+  //   scrollTrigger: {
+  //   trigger: "#trigger",
+  //   start: "top top",
+  //   end: "bottom top",
+  //   scrub: true,
+  //   toggleActions: "restart pause resume pause"
+  // },
+  //   y: Math.PI
+  // });
   const w = window.innerWidth - 100
   const h = window.innerHeight - 100
   const scene2 = new THREE.Scene()
-  scene2.add(new THREE.AxesHelper(5))
+  // scene2.add(new THREE.AxesHelper(5))
   scene2.background = new THREE.Color(0x71c5f9)
   const canvas2 = document.querySelector('.cubo-GS')
 
@@ -189,18 +201,15 @@ export const footercubes = () => {
   figure2.forEach((c) => scene2.add(c))
 
   const controls = new DragControls(figure2, camera, renderer2.domElement)
-  controls.addEventListener('dragstart', function (event) {
-    event.object.material.opacity = 0.33
+  controls.addEventListener('dragstart', function (e) {
+    e.object.material.opacity = 0.33
   })
-  controls.addEventListener('dragend', function (event) {
-    event.object.material.opacity = 1
+  controls.addEventListener('dragend', function (e) {
+    e.object.material.opacity = 1
   })
-  controls.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') {
-      figure2[0].rotation.x += 0
-      figure2[0].rotation.y += 0.01
-      figure2[1].rotation.x += 0
-      figure2[1].rotation.y += 0.01
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      console.log('key pressed')
     }
   })
   controls.enableDamping = true

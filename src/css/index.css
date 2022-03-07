@@ -252,37 +252,56 @@ html {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     justify-items: center;
-
 }
 
 .info-card {
     margin: 2rem;
     border-radius: 50px;
-    background-color: #333;
-    /* background-image: url("./img/pazzoimg.jpeg"); */
-    color: white;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 20rem;
-    position: relative;
-    max-width: 40rem;
-
-
+    width: 30rem;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-
-.info-img {
-    height: 10rem;
-    margin-left: 1rem;
-    border-radius: 20px;
+.info-card:nth-child(1){
+    background-image: url('../img/alberiAB.jpeg');    
+}
+.info-card:nth-child(2){
+    background-image: url('../img/plastica.jpeg');
+}
+.info-card:nth-child(3){
+    background-image: url('../img/rifiuti1.jpeg');
+}
+.info-card:nth-child(4){
+    background-image: url('../img/elettrica.jpeg');
 }
 
 .info-text {
-    margin-right: 3rem;
-    margin-left: 3rem;
-    margin-bottom: 4rem;
-    font-weight: 300;
-    margin-bottom: 4rem;
+    position: absolute;
+    background-color: white;
+    padding: 30px;
+    margin: auto;
+    color: #333;
+    display: none;
+    height: 3rem;
+    width: 15rem;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 20px;
+    opacity: 0.7;
+    transition: 0.6s ease;
+    -webkit-transition: 0.5s ease;
+    -moz-transition: 0.5s ease;
+
+}
+.info-card:hover .info-text{
+    transition: 0.7s ease;
+    display: inline;
 }
 
 .info-button {
